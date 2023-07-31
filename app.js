@@ -10,7 +10,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-  res.render("home.ejs");
+  res.render("home.ejs", {
+    homeContent: homeStartingContent,
+  });
 });
 
 
