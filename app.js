@@ -9,7 +9,9 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-
+app.get('/', (req, res) => {
+  res.render("home.ejs");
+});
 
 
 
