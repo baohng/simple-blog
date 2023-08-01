@@ -23,11 +23,13 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/post/:postName', (req,res) => {
+app.get('/posts/:postName', (req,res) => {
   const requestedTitle = _.lowerCase(req.params.postName);
   allPosts.forEach(element => {
     if (_.lowerCase(element.title) === requestedTitle) {
-      console.log("match found");
+      res.render("post.ejs", {
+        element: element
+      });
     } else {
       console.log("not found");
     }
