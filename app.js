@@ -12,14 +12,18 @@ app.use(express.static("public"));
 app.get('/', (req, res) => {
   res.render("home.ejs", {
     homeContent: homeStartingContent,
+    posts: allPosts,
   });
-  console.log(allPosts);
 });
 
 app.get('/about', (req, res) => {
   res.render("about.ejs", {
     aboutContent: aboutContent,
   });
+});
+
+app.get('/post/:usertype', (req,res) => {
+  console.log(req.params.usertype);
 });
 
 app.get('/contact', (req, res) => {
