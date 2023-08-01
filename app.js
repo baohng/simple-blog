@@ -30,9 +30,7 @@ app.get('/posts/:postName', (req,res) => {
       res.render("post.ejs", {
         element: element
       });
-    } else {
-      console.log("not found");
-    }
+    };
   });
 });
 
